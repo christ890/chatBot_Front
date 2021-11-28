@@ -1,36 +1,37 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">CATEGORIAS</h1>
 </div>
+<div class="container">
+  <div class="progress" *ngIf="cargar">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"  aria-valuenow="100"  style="width: 100%;"></div>
+  </div>
+</div>
 <div class="card">
     <div class="card-body">
       <h4>Nueva Categoria</h4>
-      <button type="button" class="btn btn-primary">Nueva Categoria</button>
+      <button type="button" class="btn btn-primary">Registrar</button>
+    </div>
+</div>
+<div class="card">
+  <div class="card-body">
+  <div class="table-responsive">
+    <table class="table table-striped table-hover" id="categorias">
+        <thead >
+              <th scope="col">ID</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Opciones</th>        
+          </thead>       
+          <tbody>
+           <tr *ngFor="let categorias of categorias">
+             <th scope="row">{{categorias.idcat}}</th>
+             <th scope="row">{{categorias.descripcion}}</th>
+             <th>
+                <button type="button" class="btn btn-warning">Editar</button>
+                <button type="button" class="btn btn-danger">Eliminar</button>
+             </th>
+           </tr>
+          </tbody>
+    </table>
     </div>
   </div>
-  <div class="table-responsive">
-<table class="table table-striped table-hover" id="productos">
-    <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Descripción</th>
-          <th scope="col">Precio</th>
-          <th scope="col">Stock</th>
-          <th scope="col">Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Azucar</td>
-          <td>2.9</td>
-          <td>20</td>
-          <td>
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-warning">Middle</button>
-                <button type="button" class="btn btn-danger">Right</button>
-              </div>
-          </td>
-        </tr>
-      </tbody>
-</table>
 </div>
