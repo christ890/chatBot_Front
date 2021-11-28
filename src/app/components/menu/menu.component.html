@@ -1,0 +1,64 @@
+<!-- -->
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+      <div class="position-sticky pt-3">
+          <ul class="nav flex-column">
+              <li class="nav-item">
+                  <a routerLink="/home" routerLinkActive="active-link" class="nav-link">
+                      <i class="bi bi-house-door"></i>
+                  Inicio
+                  </a>
+              </li>
+              <li>
+                  <a routerLink="/ingresos" routerLinkActive="active-link" class="nav-link">
+                      <i class="bi bi-bag-plus-fill"></i>
+                  Ingresos
+                  </a>
+              </li>
+              <li>
+                  <a routerLink="/ventas" routerLinkActive="active-link" class="nav-link">
+                      <i class="bi bi-credit-card-2-back"></i>
+                  Ventas
+                  </a>
+              </li>
+              <li>
+                  <a routerLink="/productos" routerLinkActive="active-link" class="nav-link">
+                      <i class="bi bi-list-check"></i>
+                  Productos
+                  </a>
+              </li>
+              <li>
+                  <a routerLink="/proveedores" routerLinkActive="active-link" class="nav-link">
+                      <i class="bi bi-people"></i>
+                  Proveedores
+                  </a>
+              </li>
+              <li>
+                  <a routerLink="/trabajadores" routerLinkActive="active-link" class="nav-link">
+                      <i class="bi bi-person-badge"></i>
+                  Trabajadores
+                  </a>
+              </li>
+              <li>
+                  <a routerLink="/clientes" routerLinkActive="active-link" class="nav-link">
+                      <i class="bi bi-person-circle"></i>  
+                  Clientes
+                  </a>
+              </li>
+              <li>
+                  <a routerLink="/categorias" routerLinkActive="active-link" class="nav-link">
+                      <i class="bi bi-card-list"></i>
+                  Categorias
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bg-light ">
+      <router-outlet class="my-4 w-100" id="myChart" width="900" height="380"></router-outlet>
+    </main>
+  </div>
+</div>
