@@ -9,39 +9,86 @@ import { ClienteService } from '../../service/cliente.service';
   styleUrls: ['./clientes.component.css']
 })
 export class ClientesComponent implements OnInit {
-  
+
   clientes: Cliente[] = [];
-  ClienteService: any;
-
-  constructor(private router: Router) { }
-
-
-
-  
-  Clientes: Cliente = {
+  cliente: Cliente = {
     idcli: 0,
     nombre: "",
     apellido: "",
     direccion: "",
-    telefono: "",
+    telefono: ""
 
-    }
-    registraCliente(){
-      console.log(this.clientes);
-  
-      this.ClienteService.registraCliente(this.clientes).subscribe(
-        (        response: { mensaje: any; }) => {
-          console.log(response.mensaje);
-          alert(response.mensaje);
-        },
-        (        error: any) => {
-          console.log(error);
-        }
-      );
-  
-    }
-    
+  };
+
+  constructor(private router: Router, private clienteService: ClienteService) {
+    this.listar();
+  }
+
+
+  listar() {
+    this.clienteService.listarCliente().subscribe(
+      response => this.clientes = response
+    );
+  }
+
   ngOnInit(): void {
   }
-  };
- 
+
+
+  registra() {
+    this.clienteService.registra(this.cliente).subscribe(
+      response => {
+        console.log(response.mensaje);
+        alert(response.mensaje);
+
+        this.clienteService.listarCliente().subscribe(
+          response => this.clientes = response
+        );
+
+        this.cliente = {
+          idcli: 0,
+          nombre: "",
+          apellido: "",
+          direccion: "",
+          telefono: "",
+        }
+      },
+      error => {
+        console.log(error);
+      },
+    );
+  }
+  
+  actualiza() {
+
+    this.clienteService.actualiza(this.cliente).subscribe(
+      response => {
+
+        console.log(response.mensaje);
+        alert(response.mensaje);
+
+        this.clienteService.actualiza(this.cliente).subscribe(
+          response => this.clientes = response
+        );
+        this.cliente = {
+          idcli: 0,
+          nombre: "",
+          apellido: "",
+          direccion: "",
+          telefono: ""
+        }
+      },
+      error => {
+        console.log(error);
+      },
+    );
+  }
+
+  busca(c: Cliente) {
+    this.cliente = c;
+  }
+
+
+};
+
+
