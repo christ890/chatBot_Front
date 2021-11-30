@@ -14,6 +14,8 @@ import { CategoriasComponent } from './components/categorias/categorias.componen
 import { MenuComponent } from './components/menu/menu.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HeaderComponent } from './components/header/header.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { HeaderComponent } from './components/header/header.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

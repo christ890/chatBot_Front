@@ -1,3 +1,32 @@
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">PROVEEDORES</h1>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom" >
+  <h1 class="h2">PROVEEDORES</h1>
+</div>
+<div class="card">
+  <div class="card-body">
+    <h4>Nuevo Proveedor</h4>
+    <button type="button" class="btn btn-primary">Nuevo Producto</button>
   </div>
+</div>
+<div class="table-responsive">
+  <table id="proveedor" class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>DIRECCION/th>
+            <th>RAZON SOCIAL</th>
+            <th>RUC</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pr of proveedor">
+            <td>{{pr.idprov}}</td>
+            <td>{{pr.direccion}}</td>
+            <td>{{pr.razons}}</td>
+            <td>{{pr.ruc}}</td>
+
+            <td><button class="btn btn-danger btn-sm" type="button"> Eliminar </button></td>                 
+        </tr>
+    </tbody>
+</table>
+</div>

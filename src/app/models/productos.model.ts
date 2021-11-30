@@ -1,8 +1,10 @@
+import { Categoria } from './categoria.model';
+import { Proveedores } from './proveedores.model';
 export class Productos {
     idpro?: number;
     descripcion?: string;
     precio?: number;
     stock?: number;
-    categorias_idcat?: number;
-    proveedores_idprov?: number;
+    categoria?: Categoria;
+    proveedor?: Proveedores;
 }
