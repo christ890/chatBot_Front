@@ -3,8 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Cliente } from '../models/cliente.model';
 
-
-
 const baseUrl = 'http://localhost:8080/api/clientes';
 
 @Injectable({
@@ -25,9 +23,8 @@ export class ClienteService {
 
   actualiza(aux: Cliente): Observable<any> {
     return this.http.put<any>(baseUrl + "/actualizaCliente", aux);
-
-
 }
+
 eliminar(id: number) {
   const url = `${baseUrl}/${id}`;
   return this.http.delete(url);

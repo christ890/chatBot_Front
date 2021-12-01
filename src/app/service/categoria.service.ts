@@ -16,17 +16,17 @@ export class CategoriaService {
     return this.http.get<Categoria[]>(baseUrl + "/listarCategoria");
   }
   
-  registrarCategorias(aux: Categoria): Observable<any> {
+  registra(aux: Categoria): Observable<any> {
     return this.http.post<any>(baseUrl + "/registraCategoria", aux);
   }
+
+  actualiza(aux: Categoria): Observable<any> {
+    return this.http.put<any>(baseUrl + "/actualizaCategoria", aux);
+}
 
   eliminar(id: number) {
     const url = `${baseUrl}/${id}`;
     return this.http.delete(url);
   }
-
-
-  
-
-  
- }
+  }  
+ 
