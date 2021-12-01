@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { IngresosComponent } from './components/ingresos/ingresos.component';
+import { PedidosComponent } from './components/pedidos/pedidos.component';
 import { VentasComponent } from './components/ventas/ventas.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { ProveedoresComponent } from './components/proveedores/proveedores.component';
@@ -21,7 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     HomeComponent,
-    IngresosComponent,
+    PedidosComponent,
     VentasComponent,
     ProductosComponent,
     ProveedoresComponent,
