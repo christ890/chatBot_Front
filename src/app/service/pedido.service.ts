@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { Pedido } from '../models/pedido.model';
 
 
 const baseUrl = 'http://localhost:8080/api/pedidos';
@@ -8,7 +9,7 @@ const baseUrl = 'http://localhost:8080/api/pedidos';
 @Injectable({
   providedIn: 'root'
 })
-export class Pedido {
+export class PedidoService {
     constructor(private http: HttpClient){}
 
 

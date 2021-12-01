@@ -24,20 +24,142 @@
 <div class="card">
   <div class="card-body">
     <div class="table-responsive">
-      <table class="table table-striped table-hover" id="cliente">
+      <table id="productos" class="table table-striped table-hover">
         <thead>
           <tr>
             <th scope="col">ID</th>
             <th scope="col">DESCRIPCION</th>
-            <th scope="col">FECHA PEDIDO</th>
-            <th scope="col">FECHA ENTREGA</th>
-            <th scope="col">OPCIONES</th>
+            <th scope="col">FECHA DE PEDIDO</th>
+            <th scope="col">FECHA DE ENTREGA</th>
+
           </tr>
         </thead>
         <tbody>
-          <tr></tr>
+          <tr *ngFor="let pe of pedidos">
+            <td>{{pe.idped}}</td>
+            <td>{{pe.descripcion}}</td>
+            <td>{{pe.fecpedido}}</td>
+            <td>{{pe.fecEntrega}}</td>
+
+            <td><button (click)="busca(pe)" type="button" class="btn btn-primary btn-sm" data-toggle="modal"
+                data-target="#idModalActualizar">Actualizar</button>
+              <button (click)="eliminar(pe.idped)" class="btn btn-danger btn-sm">Eliminar</button>
+            </td>
+          </tr>
         </tbody>
       </table>
+      
     </div>
   </div>
+  <div class="modal fade" id="idModalActualizar" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" style="max-width: 80%;">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Actualización de pedido</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <form class="content">
+                <div class="submit-form">
+
+                  <div class="row">
+                    <div class="col-lg-2">
+                      <label for="id_act_descripcion">DESCRIPCION</label>
+                      <input [(ngModel)]="pedido.descripcion" type="text" class="form-control" name="descripcion"
+                        id="id_act_descripcion" />
+                    </div>
+
+                    <div class="col-lg-2">
+                      <label for="id_act_fecpedido">FECHA PEDIDO</label>
+                      <input [(ngModel)]="pedido.fecpedido" type="text" placeholder="Ingrese fecpedido"
+                        class="form-control" name="fecpedido" id="id_act_fecpedido" />
+                    </div>
+                    <div class="col-lg-2">
+                      <label for="id_act_fecEntrega">FECHA ENTREGA</label>
+                      <input [(ngModel)]="pedido.fecEntrega" ts type="text" class="form-control" name="fecEntrega"
+                        id="id_act_fecEntrega" />
+                    </div>
+                   
+                  </div>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    id="btn_act_cerrar">Close</button>
+                  <div class="form-group text-center">
+                    <div class="col-lg-12">
+                      <button (click)="actualiza()" id="id_act_actualiza"
+                        class="btn btn-success form-control">Actualizar</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="idModalRegistrar" tabindex="-1" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+
+      <div class="modal-dialog" style="max-width: 70%;">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Registro de pedido</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+
+            <div class="submit-form">
+              <div class="row">
+                <div class="col-lg-2">
+                  <label for="id_reg_descripcion">DESCRIPCION</label>
+                  <input [(ngModel)]="pedido.descripcion" type="text" placeholder="Ingrese el descripcion" class="form-control"
+                    name="descripcion" id="id_reg_descripcion" />
+                </div>
+
+                <div class="col-lg-2">
+                  <label for="id_reg_fecpedido">FECHA PEDIDO</label>
+                  <input [(ngModel)]="pedido.fecpedido" type="date" placeholder="Ingrese fecpedido"
+                    class="form-control" name="fecpedido" id="id_reg_fecpedido" />
+                </div>
+                <div class="col-lg-2">
+                  <label for="id_reg_fecEntrega">FECHA ENTREGA</label>
+                  <input [(ngModel)]="pedido.fecEntrega" type="date" placeholder="Ingrese fecEntrega"
+                    class="form-control" name="fecEntrega" id="id_reg_fecEntrega" />
+                </div>
+
+
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btn_reg_cerrar"
+                  style="width: 100px;">Close</button>
+                <div class="form-group text-center">
+                  <div class="col-lg-12">
+                    <button (click)="registra()" id="id_reg_registra" class="btn btn-success form-control"
+                      style="width: 100px;">Registrar</button>
+                  </div>
+                </div>
+              </div>
+
+
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+      
 </div>
