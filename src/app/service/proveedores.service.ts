@@ -14,4 +14,15 @@ export class ProveedoresService {
   listarProveedor(): Observable<Proveedores[]> {
     return this.http.get<Proveedores[]>(baseUrl + "/listarProveedores");
   }
+
+  registra(aux: Proveedores): Observable<any> {
+    return this.http.post<any>(baseUrl + "/registraProveedor", aux);
+  }
+
+  actualiza(aux: Proveedores): Observable<any> {
+    return this.http.put<any>(baseUrl + "{idprov}", aux);
+
+  }
+  busca(pr : Proveedores){
+    return this.busca;}
 }

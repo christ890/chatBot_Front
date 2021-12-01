@@ -33,8 +33,10 @@
             <td>{{c.direccion}}</td>
             <td>{{c.telefono}}</td>
             <td><button (click)="busca(c)" type="button" class="btn btn-primary btn-sm"
-                data-toggle="modal" data-target="#idModalActualizar">Actualizar</button></td>
-            <td><button class="btn btn-danger btn-sm" type="button"> Eliminar </button></td>  
+                data-toggle="modal" data-target="#idModalActualizar">Actualizar</button>
+                <button (click)="eliminar(c.idcli)" class="btn btn-danger btn-sm">Eliminar</button>  
+            </td>
+
 
  
             
@@ -65,9 +67,9 @@
                             </div>
 
                             <div class="col-lg-2">
-                                <label for="id_reg_apellido">Fecha Registro</label>
-                                <input [(ngModel)]="cliente.apellido" ts type="date" class="form-control"
-                                    name="apellido" id="id_apellido" />
+                                <label for="id_reg_apellido">Apellido</label>
+                                <input [(ngModel)]="cliente.apellido"type="text" placeholder="Ingrese apellido" 
+                                class="form-control" name="apellido" id="id_reg_apellido" />
                             </div>
                             <div class="col-lg-2">
                                 <label for="id_reg_direccion">Direccion</label>

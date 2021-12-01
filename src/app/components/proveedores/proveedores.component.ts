@@ -10,10 +10,19 @@ import { ProveedoresService } from '../../service/proveedores.service';
 })
 export class ProveedoresComponent implements OnInit {
   proveedor: Proveedores[] = [];
+  proveedores: Proveedores = {
+    idprov: 0,
+    direccion: "",
+    razons: "",
+    ruc: "",
+
+
+  };
+
 
   constructor(private router: Router, private proveedorService: ProveedoresService) {
     this.listar();
-    
+
   }
 
 
@@ -22,6 +31,56 @@ export class ProveedoresComponent implements OnInit {
       response => this.proveedor = response
     );
   }
+  registra() {
+    this.proveedorService.registra(this.proveedores).subscribe(
+      response => {
+        console.log(response.mensaje);
+        alert(response.mensaje);
+
+        this.proveedorService.listarProveedor().subscribe(
+          response => this.proveedor = response
+        );
+
+        this.proveedores = {
+          idprov: 0,
+          direccion: "",
+          razons: "",
+          ruc: "",
+        }
+      },
+      error => {
+        console.log(error);
+      },
+    );
+  }
+    
+  actualiza() {
+
+    this.proveedorService.actualiza(this.proveedores).subscribe(
+      response => {
+
+        console.log(response.mensaje);
+        alert(response.mensaje);
+
+        this.proveedorService.actualiza(this.proveedores).subscribe(
+          response => this.proveedores = response
+        );
+        this.proveedores= {
+          idprov: 0,
+          direccion: "",
+          razons: "",
+          ruc: "",
+        }
+      },
+      error => {
+        console.log(error);
+      },
+    );
+  }
+  busca(pr: Proveedores) {
+    this.proveedores = pr;
+  }
+
 
   ngOnInit(): void {
   }

@@ -4,7 +4,8 @@
 <div class="card">
   <div class="card-body">
     <h4>Nuevo Proveedor</h4>
-    <button type="button" class="btn btn-primary">Nuevo Producto</button>
+    <button type="button" data-toggle='modal' data-target="#idModalRegistrar" class='btn btn-success'
+    style="width: 150px">Registrar</button>
   </div>
 </div>
 <div class="table-responsive">
@@ -24,9 +25,118 @@
             <td>{{pr.direccion}}</td>
             <td>{{pr.razons}}</td>
             <td>{{pr.ruc}}</td>
-
+            <td><button (click)="busca(pr)" type="button" class="btn btn-primary btn-sm"
+                data-toggle="modal" data-target="#idModalActualizar">Actualizar</button></td>
             <td><button class="btn btn-danger btn-sm" type="button"> Eliminar </button></td>                 
         </tr>
     </tbody>
+    
 </table>
+<div class="modal fade" id="idModalRegistrar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+  <div class="modal-dialog" style="max-width: 70%;">
+      <div class="modal-content">
+
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Registro de Proveedor</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+
+          <div class="modal-body">
+
+                  <div class="submit-form">
+                      <div class="row">
+                          <div class="col-lg-2">
+                              <label for="id_reg_direccion">DIRECCION</label>
+                              <input [(ngModel)]="proveedores.direccion" type="text" placeholder="Ingrese el direccion"
+                                  class="form-control" name="direccion" id="id_reg_direccion" />
+                          </div>
+
+                          <div class="col-lg-2">
+                              <label for="id_reg_razons">RAZON SOCIAL</label>
+                              <input [(ngModel)]="proveedores.razons"type="text" placeholder="Ingrese razons" 
+                              class="form-control" name="razons" id="id_reg_razons" />
+                          </div>
+                          <div class="col-lg-2">
+                              <label for="id_reg_ruc">RUC</label>
+                              <input [(ngModel)]="proveedores.ruc"type="text" placeholder="Ingrese ruc" 
+                              class="form-control" name="ruc" id="id_reg_ruc" />
+                          </div>
+
+
+
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btn_reg_cerrar"
+                          style="width: 100px;">Close</button>
+                      <div class="form-group text-center">
+                          <div class="col-lg-12">
+                              <button (click)="registra()" id="id_reg_registra"
+                                  class="btn btn-success form-control" style="width: 100px;">Registrar</button>
+                          </div>
+                      </div>
+                  </div>
+
+
+
+          </div>
+
+
+      </div>
+  </div>
+</div>
+<div class="modal fade" id="idModalActualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 80%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Actualización de cliente</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <form class="content">
+                    <div class="submit-form">
+
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <label for="id_act_direccion">Direccion</label>
+                                <input [(ngModel)]="proveedores.direccion" type="text" class="form-control" name="direccion"
+                                    id="id_act_direccion" />
+                            </div>
+
+                            <div class="col-lg-2">
+                                <label for="id_act_razons">Razon Social</label>
+                                <input [(ngModel)]="proveedores.razons"type="text" placeholder="Ingrese razons" 
+                                class="form-control" name="razons" id="id_act_razons" />
+                            </div>
+                            <div class="col-lg-2">
+                                <label for="id_act_ruc">RUC</label>
+                                <input [(ngModel)]="proveedores.ruc"  ts type="text" class="form-control" 
+                                    name="ruc" id="id_act_ruc" />
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                            id="btn_act_cerrar">Close</button>
+                        <div class="form-group text-center">
+                            <div class="col-lg-12">
+                                <button (click)="actualiza()" id="id_act_actualiza"
+                                    class="btn btn-success form-control">Actualizar</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>-->
+</div> 
 </div>

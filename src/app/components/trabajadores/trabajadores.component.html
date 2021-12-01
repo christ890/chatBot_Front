@@ -1,3 +1,46 @@
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">TRABAJADORES</h1>
+<div class="card">
+  <div class="card-body">
+    <h4>Nuevo Trabajador</h4>
+    <div class="col-md-2">
+      <button type="button" data-toggle='modal' data-target="#idModalRegistrar" class='btn btn-success'
+          style="width: 150px">Registrar</button>
+
   </div>
+  </div>
+</div>
+<div class="table-responsive">
+
+<table id="productos" class="table table-striped table-hover">
+  <thead>
+      <tr>
+          <th>ID</th>
+          <th>USERNAME</th>
+          <th>CLAVE</th>
+          <th>NOMBRE</th>
+          <th>APELLIDO</th>
+          <th>DIRECCION</th>
+          <th>DNI</th>
+          <th>TELEFONO</th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let t of trabajador">
+          <td>{{t.idtra}}</td>
+          <td>{{t.nombre}}</td>
+          <td>{{t.apellido}}</td>
+          <td>{{t.direccion}}</td>
+          <td>{{t.dni}}</td>
+          <td>{{t.telefono}}</td>
+          <td><button (click)="busca(t)" type="button" class="btn btn-primary btn-sm"
+              data-toggle="modal" data-target="#idModalActualizar">Actualizar</button>
+              <button (click)="eliminar(t.idtra)" class="btn btn-danger btn-sm">Eliminar</button>  
+          </td>
+
+
+
+          
+                 
+      </tr>
+  </tbody>
+</table>

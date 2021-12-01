@@ -87,6 +87,19 @@ export class ClientesComponent implements OnInit {
   busca(c: Cliente) {
     this.cliente = c;
   }
+  eliminar(id?: number) {
+    this.clienteService.eliminar(id!).subscribe(
+      resp => {
+        this.listar();
+      },
+      error => {
+        console.log(error);
+      },
+      () => {
+        console.log('complete!');
+      }
+    )
+  }
 
 
 };

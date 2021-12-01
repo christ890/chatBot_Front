@@ -25,9 +25,10 @@ export class ClienteService {
 
   actualiza(aux: Cliente): Observable<any> {
     return this.http.put<any>(baseUrl + "/actualizaCliente", aux);
-  
-
 
 }
-
+eliminar(id: number) {
+  const url = `${baseUrl}/${id}`;
+  return this.http.delete(url);
+}
 }
