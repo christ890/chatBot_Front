@@ -20,6 +20,11 @@ export class CategoriaService {
     return this.http.post<any>(baseUrl + "/registraCategoria", aux);
   }
 
+  eliminar(id: number) {
+    const url = `${baseUrl}/${id}`;
+    return this.http.delete(url);
+  }
+
 
   
 

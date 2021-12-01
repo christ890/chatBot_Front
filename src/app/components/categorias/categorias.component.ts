@@ -57,6 +57,18 @@ export class CategoriasComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  eliminar(id?: number) {
+    this.categoriaService.eliminar(id!).subscribe(
+      resp => {
+        this.listar();
+      },
+      error => {
+        console.log(error);
+      },
+      () => {
+        console.log('complete!');
+      }
+    )
+  }
   
 }
