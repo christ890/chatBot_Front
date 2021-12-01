@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Pedido } from '../../models/pedido.model';
+
+
 
 @Component({
   selector: 'app-pedidos',
@@ -8,7 +11,6 @@ import { Router } from '@angular/router';
 })
 export class PedidosComponent implements OnInit {
 
-  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }

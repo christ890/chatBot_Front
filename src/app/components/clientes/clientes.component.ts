@@ -46,7 +46,7 @@ export class ClientesComponent implements OnInit {
         );
 
         this.cliente = {
-          idcli: 0,
+
           nombre: "",
           apellido: "",
           direccion: "",

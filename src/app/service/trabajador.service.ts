@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Trabajador } from '../models/trabajador.model';
 
 
-const baseUrl = 'http://localhost:8080/api/trabajador';
+const baseUrl = 'http://localhost:8080/api/trabajadores';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class TrabajadorService {
   constructor(private http: HttpClient) { }
 
   listarTrabajador(): Observable<Trabajador[]> {
-    return this.http.get<Trabajador[]>(baseUrl + "/listarTrabajador");
+    return this.http.get<Trabajador[]>(baseUrl + "/listaTrabajador");
   }
   
   registra(aux: Trabajador): Observable<any> {

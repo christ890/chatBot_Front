@@ -1,8 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { Cliente } from "../models/cliente.model";
-import { Productos } from "../models/productos.model";
+
 
 const baseUrl = 'http://localhost:8080/api/pedidos';
 
@@ -12,9 +11,22 @@ const baseUrl = 'http://localhost:8080/api/pedidos';
 export class Pedido {
     constructor(private http: HttpClient){}
 
-    listarPedidos():Observable<Pedido[]>{
-        return this.http.get<Pedido[]>(baseUrl + "/listar");
+
+    listarPedido(): Observable<Pedido[]> {
+      return this.http.get<Pedido[]>(baseUrl + "/listarPedido");
     }
-        
-    
+  
+    registra(aux: Pedido): Observable<any> {
+      return this.http.post<any>(baseUrl + "/registraPedido", aux);
+    }
+  
+  
+    actualiza(aux: Pedido): Observable<any> {
+      return this.http.put<any>(baseUrl + "/actualizaPedido", aux);
+  }
+  
+  eliminar(id: number) {
+    const url = `${baseUrl}/${id}`;
+    return this.http.delete(url);
+  }
 }

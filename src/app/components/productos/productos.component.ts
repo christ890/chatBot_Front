@@ -15,6 +15,14 @@ import { CategoriaService } from '../../service/categoria.service';
 export class ProductosComponent implements OnInit {
 
   productos: Productos[] = [];
+  producto: Productos = {
+    idpro: 0,
+    descripcion: "",
+    precio: 0,
+    stock: 0,
+
+  };
+
 
   categoria: Categoria[] = [];
   proveedor: Proveedores[] = [];
@@ -30,7 +38,7 @@ export class ProductosComponent implements OnInit {
   }
 
 
- /* listar() {
+ listar() {
     this.productosService.listarProductos().subscribe(
       response => this.productos = response
     );
@@ -41,7 +49,30 @@ export class ProductosComponent implements OnInit {
       (proveedores)=>this.proveedor = proveedores
     );
   }
-*/
+  registra() {
+    this.productosService.registra(this.producto).subscribe(
+      response => {
+        console.log(response.mensaje);
+        alert(response.mensaje);
+
+        this.productosService.listarProductos().subscribe(
+          response => this.productos = response
+        );
+
+        this.producto = {
+          idpro: 0,
+          descripcion: "",
+          precio: 0,
+          stock: 0,
+      
+        }
+      },
+      error => {
+        console.log(error);
+      },
+    );
+  }
+
   ngOnInit(): void {
   }
 

@@ -30,9 +30,35 @@ export class TrabajadoresComponent implements OnInit {
       response => this.trabajador = response
     );
   }
+  actualiza() {
+
+    this.trabajadorService.actualiza(this.trabajadores).subscribe(
+      response => {
+
+        console.log(response.mensaje);
+        alert(response.mensaje);
+
+        this.trabajadorService.actualiza(this.trabajadores).subscribe(
+          response => this.trabajadores = response
+        );
+        this.trabajadores = {
+          idtra: 0,
+          nombre: "",
+          apellido: "",
+          direccion: "",
+          dni: "",
+          telefono: ""
+        }
+      },
+      error => {
+        console.log(error);
+      },
+    );
+  }
   busca(c: Trabajador) {
     this.trabajadores = c;
   }
+
   registra() {
     this.trabajadorService.registra(this.trabajadores).subscribe(
       response => {

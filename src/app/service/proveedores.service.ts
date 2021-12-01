@@ -23,7 +23,12 @@ export class ProveedoresService {
     return this.http.put<any>(baseUrl + "{idprov}", aux);
 
   }
-  busca(pr : Proveedores){
-    return this.busca;}
+  busca(pr: Proveedores) {
+    return this.busca;
+  }
+  eliminar(id: number) {
+    const url = `${baseUrl}/${id}`;
+    return this.http.delete(url);
+  }
 
 }

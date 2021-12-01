@@ -26,14 +26,37 @@ export class CategoriasComponent implements OnInit {
   constructor(private router: Router, private categoriaService: CategoriaService) {
     this.listar();
   }
+    
+  actualiza() {
+
+    this.categoriaService.actualiza(this.categoria).subscribe(
+      response => {
+
+        console.log(response.mensaje);
+        alert(response.mensaje);
+
+        this.categoriaService.actualiza(this.categoria).subscribe(
+          response => this.categorias = response
+        );
+        this.categoria = {
+          idcat: 0,
+          descripcion: "",
+
+        }
+      },
+      error => {
+        console.log(error);
+      },
+    );
+  }
 
   listar() {
     this.categoriaService.listarCategoria().subscribe(
       response => this.categorias = response
     );
   }
-  registrarCategorias() {
-    this.categoriaService.registrarCategorias(this.categoria).subscribe(
+  registra() {
+    this.categoriaService.registra(this.categoria).subscribe(
       response => {
         console.log(response.mensaje);
         alert(response.mensaje);
@@ -69,6 +92,9 @@ export class CategoriasComponent implements OnInit {
         console.log('complete!');
       }
     )
+  }
+  busca(cat: Categoria) {
+    this.categoria = cat;
   }
   
 }

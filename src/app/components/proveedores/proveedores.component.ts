@@ -84,7 +84,19 @@ export class ProveedoresComponent implements OnInit {
   busca(pr: Proveedores) {
     this.proveedores = pr;
   }
-
+  eliminar(id?: number) {
+    this.proveedorService.eliminar(id!).subscribe(
+      resp => {
+        this.listar();
+      },
+      error => {
+        console.log(error);
+      },
+      () => {
+        console.log('complete!');
+      }
+    )
+  }
 
   ngOnInit(): void {
   }
