@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">CATEGORIAS</h1>
 </div>
-<div class="container">
+<div >
 
 <div class="card">
     <div class="card-body">
@@ -9,9 +9,8 @@
 
       <button type="button" data-toggle='modal' data-target="#idModalRegistrar" class='btn btn-success'
       style="width: 150px">Registrar</button>
-=======
-      <button type="button" class="btn btn-primary">Registrar</button>
->>>>>>> c35634ec8999a3b7849c836623ce360c8ce2770b
+
+
     </div>
 </div>
 <div class="card">
@@ -23,7 +22,8 @@
         <tr>
           <th scope="col">ID</th>
           <th scope="col">Descripción</th>
-
+          <th scope="col">OPCIONES</th>
+          
         </tr>
       </thead>
       <tbody>
@@ -84,25 +84,3 @@
   </div>
 </div>
 </div>
-=======
-    <table class="table table-striped table-hover" id="categorias">
-        <thead >
-              <th scope="col">ID</th>
-              <th scope="col">Descripción</th>
-              <th scope="col">Opciones</th>        
-          </thead>       
-          <tbody>
-           <tr *ngFor="let categorias of categorias">
-             <th scope="row">{{categorias.idcat}}</th>
-             <th scope="row">{{categorias.descripcion}}</th>
-             <th>
-                <button type="button" class="btn btn-warning">Editar</button>
-                <button type="button" class="btn btn-danger">Eliminar</button>
-             </th>
-           </tr>
-          </tbody>
-    </table>
-    </div>
-  </div>
-</div>
-

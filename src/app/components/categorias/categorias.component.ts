@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-<<<<<<< HEAD
+
 import { Categoria } from '../../models/categoria.model';
 import { CategoriaService } from '../../service/categoria.service';
-=======
+
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
->>>>>>> c35634ec8999a3b7849c836623ce360c8ce2770b
+
 
 @Component({
   selector: 'app-categorias',
@@ -54,20 +54,9 @@ export class CategoriasComponent implements OnInit {
     );
   }
 
-<<<<<<< HEAD
-=======
-  categorias:any = [];
-  cargar:boolean = false;
-
-  constructor(private router: Router) { }
->>>>>>> c35634ec8999a3b7849c836623ce360c8ce2770b
-
   ngOnInit(): void {
   }
 
-  buscarCaregorias(){
-    this.cargar = true;
-  }
 
   
 }

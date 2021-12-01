@@ -4,12 +4,11 @@
 <div class="card">
   <div class="card-body">
     <h4>Nuevo Proveedor</h4>
-<<<<<<< HEAD
+
     <button type="button" data-toggle='modal' data-target="#idModalRegistrar" class='btn btn-success'
     style="width: 150px">Registrar</button>
-=======
-    <button type="button" class="btn btn-primary">Nuevo Producto</button>
->>>>>>> c35634ec8999a3b7849c836623ce360c8ce2770b
+
+
   </div>
 </div>
 <div class="table-responsive">
@@ -20,6 +19,8 @@
             <th>DIRECCION/th>
             <th>RAZON SOCIAL</th>
             <th>RUC</th>
+            <th scope="col">OPCIONES</th>
+            <th scope="col"></th>
 
         </tr>
     </thead>
@@ -29,7 +30,7 @@
             <td>{{pr.direccion}}</td>
             <td>{{pr.razons}}</td>
             <td>{{pr.ruc}}</td>
-<<<<<<< HEAD
+
             <td><button (click)="busca(pr)" type="button" class="btn btn-primary btn-sm"
                 data-toggle="modal" data-target="#idModalActualizar">Actualizar</button></td>
             <td><button class="btn btn-danger btn-sm" type="button"> Eliminar </button></td>                 
@@ -55,18 +56,18 @@
                       <div class="row">
                           <div class="col-lg-2">
                               <label for="id_reg_direccion">DIRECCION</label>
-                              <input [(ngModel)]="proveedores.direccion" type="text" placeholder="Ingrese el direccion"
+                              <input [(ngModel)]="proveedores.direccion" type="text" placeholder="Ingrese la dirección"
                                   class="form-control" name="direccion" id="id_reg_direccion" />
                           </div>
 
                           <div class="col-lg-2">
                               <label for="id_reg_razons">RAZON SOCIAL</label>
-                              <input [(ngModel)]="proveedores.razons"type="text" placeholder="Ingrese razons" 
+                              <input [(ngModel)]="proveedores.razons"type="text" placeholder="Ingrese Razon Social" 
                               class="form-control" name="razons" id="id_reg_razons" />
                           </div>
                           <div class="col-lg-2">
                               <label for="id_reg_ruc">RUC</label>
-                              <input [(ngModel)]="proveedores.ruc"type="text" placeholder="Ingrese ruc" 
+                              <input [(ngModel)]="proveedores.ruc"type="text" placeholder="Ingrese RUC" 
                               class="form-control" name="ruc" id="id_reg_ruc" />
                           </div>
 
@@ -144,11 +145,6 @@
         </div>
     </div>-->
 </div> 
-=======
 
-            <td><button class="btn btn-danger btn-sm" type="button"> Eliminar </button></td>                 
-        </tr>
-    </tbody>
-</table>
->>>>>>> c35634ec8999a3b7849c836623ce360c8ce2770b
+
 </div>

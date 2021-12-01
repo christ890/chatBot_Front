@@ -10,7 +10,6 @@ const baseUrl = 'http://localhost:8080/api/proveedores';
 })
 export class ProveedoresService {
   constructor(private http: HttpClient) { }
-<<<<<<< HEAD
 
   listarProveedor(): Observable<Proveedores[]> {
     return this.http.get<Proveedores[]>(baseUrl + "/listarProveedores");
@@ -26,10 +25,5 @@ export class ProveedoresService {
   }
   busca(pr : Proveedores){
     return this.busca;}
-=======
 
-  listarProveedor(): Observable<Proveedores[]> {
-    return this.http.get<Proveedores[]>(baseUrl + "/listarProveedores");
-  }
->>>>>>> c35634ec8999a3b7849c836623ce360c8ce2770b
 }

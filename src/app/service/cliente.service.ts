@@ -25,18 +25,11 @@ export class ClienteService {
 
   actualiza(aux: Cliente): Observable<any> {
     return this.http.put<any>(baseUrl + "/actualizaCliente", aux);
-<<<<<<< HEAD
+
 
 }
 eliminar(id: number) {
   const url = `${baseUrl}/${id}`;
   return this.http.delete(url);
 }
-=======
-  
-
-
-}
-
->>>>>>> c35634ec8999a3b7849c836623ce360c8ce2770b
 }
